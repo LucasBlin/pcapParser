@@ -8,7 +8,13 @@
     <artifactId>PCAP-Parser</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <!-- Output to jar format -->
+	<packaging>jar</packaging>
 
+    <properties>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -25,5 +31,22 @@
             <type>jar</type>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+          <!-- Make this jar executable -->
+		  <plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-jar-plugin</artifactId>
+			<configuration>
+			   <archive>
+			     <manifest>
+				    <mainClass>com.javahelps.pcapparser.Main</mainClass>
+			     </manifest>
+			   </archive>
+			</configuration>
+		  </plugin>
+        </plugins>
+    </build>
 
 </project>

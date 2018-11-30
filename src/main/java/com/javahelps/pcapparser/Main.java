@@ -41,9 +41,7 @@ public class Main {
                         if(arr[0].equals("PASS")){
                             csvData.append(":"+arr[1]);
                         }
-        
                     }
-
                     pw.write(csvData.toString());
                     pw.close();
 
